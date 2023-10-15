@@ -6,174 +6,175 @@
 
 
     mainDoc.addEventListener("click", (e) => {
-        let target = e.target.innerText.length === 1 ? e.target.innerText : e.target.previousSibling.innerText
-        vedioChooser(target)
+/*         let target = e.target.innerText.length === 1 ? e.target.innerText : e.target.previousSibling.innerText
+ */ 
+
+let target=e.target.innerText
+let  targetELementClass=()=>{
+
+    if(e.target.tagName==="SPAN"  && target.length===1){
+        let targetVideo=e.target.previousElementSibling.classList.value
+        return targetVideo;
+        
+    }
+    else if(e.target.tagName==="SPAN"  && target.length>1){
+        let targetVideo=e.target.previousElementSibling.previousElementSibling.classList.value
+        return targetVideo;
+        
+    
+    }
+    else{
+        return null
+    }
+}
+ChoosenClassSender=targetELementClass()
+
+vedioChooser(ChoosenClassSender)
+
 
 
     })
     window.addEventListener("keyup", (e) => {
-        vedioChooser(e.key)
-    })
-    function vedioChooser(target) {
-        let userInput = target.toUpperCase()
-        switch (userInput) {
-            case "P":
-                video.style.display="flex";
-                video.setAttribute("src", `${userInput}.mp4`);
-                break;
 
-            case "Q":
-                video.style.display="flex";
-                video.setAttribute("src", `${userInput}.mp4`);
-                break;
+switch (e.key.toUpperCase()) {
+    case "P":
+          vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
+
+    case "Q":
+          vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "R":
-                video.style.display="flex";
-                video.setAttribute("src", `${userInput}.mp4`);
-                break;
+    case "R":
+          vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "S":
-                video.setAttribute("src", `${userInput}.mp4`);
-   
-                video.style.display="flex";
+    case "S":
+        vedioChooser(`videos-${e.key.toUpperCase()}`)
 
-             
-                break;
+     
+        break;
 
 
-            case "1":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "1":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "2":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "2":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "3":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "3":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "4":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "4":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "5":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "5":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "6":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "6":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "7":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "7":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "8":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "8":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "9":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "9":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "A":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "A":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "B":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "B":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "C":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "C":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "D":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "D":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "E":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "E":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "F":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "F":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "G":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
+    case "G":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
 
-            case "H":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "H":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "M":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "M":
+         vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "J":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "J":
+        vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "K":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "K":
+        vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
 
-            case "L":
-                video.style.display="flex"
-                video.setAttribute("src", `${userInput}.mp4`)
-                break;
+    case "L":
+        vedioChooser(`videos-${e.key.toUpperCase()}`)
+        break;
 
-            default:
-                null
+    default:
+        null
 
-        }
-       
-    }
-  
-
-function videoRemover(){
-   video.style.display="none"
 }
+    })
+   function vedioChooser(target)  {
+
+let caughtClass=document.querySelector(`.${target}`)
+caughtClass.style.display="flex";
+
+caughtClass.addEventListener("ended",()=>{
+    caughtClass.style.display="none"
+})
+    }
+
+
+
+
