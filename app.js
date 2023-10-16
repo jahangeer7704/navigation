@@ -4,10 +4,13 @@ let body = document.querySelector("body > div")
 let video = document.createElement("video")
 let div = document.createElement("div")
 let title = document.createElement("span")
+let spinner=document.createElement("div")
+spinner.className = "spinner"
 title.className = "title-span"
-let text = ""
 div.className = "video-container"
 body.append(div)
+div.append(spinner)
+let text = ""
 
 
 
@@ -24,11 +27,17 @@ window.addEventListener("keyup", (e) => {
     vedioChooser(e.key)
 })
 function videoSetter(userInput, text) {
+   
     div.style.display = "flex"
-    title.textContent = text
-    div.append(title)
-    div.append(video)
-    video.setAttribute("src", `${userInput}.mp4`)
+
+       video.setAttribute("src", `${userInput}.mp4`)
+       video.addEventListener("canplaythrough",()=>{
+        div.removeChild(spinner)
+        title.textContent = text
+        div.append(title)
+        div.append(video)
+       })
+   
 
 }
 function vedioChooser(target) {
