@@ -5,6 +5,8 @@ let div = document.createElement("div");
 let title = document.createElement("span");
 let spinner = document.createElement("div");
 let text = "";
+
+/* buttons */
 let button=document.createElement("div");
 let playPause=document.createElement("div");
 let quit=document.createElement("div");
@@ -13,8 +15,10 @@ button.className="button-parent"
 playPause.className="play-pause"
 quit.className="quit"
 replay.className="replay"
+button.append(quit,playPause,replay)
 
 
+//ends here
 spinner.className = "spinner";
 title.className = "title-span";
 div.className = "video-container";
