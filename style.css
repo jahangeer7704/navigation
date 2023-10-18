@@ -109,9 +109,10 @@ height: 100%;
   -webkit-backdrop-filter:blur(35px) ;
 }
 video{
-   max-width: 80%;
+max-height: 50%;
+min-height: auto;
+  max-width: 80%;
    min-width: auto;
-height: 50%;
     border-radius: 10px;
 }
 .title-span{
@@ -132,18 +133,41 @@ height: 50%;
 
 
 /* button styling */
-/* .button-parent{
-    height: 80px;
-    background-color: white;
-    width: 100%;
+.button-parent{
+    height:auto;
+    width: 50%;
+column-gap: 20px;
+    
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    border-radius: 30px;
     padding: 20px;
 }
- */
+.quitSymbol,.replaySymbol,.pauseSymbol{
+    height: 40px;
+    background-color: #ffffff;
+    width: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+margin-bottom: 10px;
+font-weight: 400;
+font-size: 25px;
+color: black;
+
+}
+.quitText,.replayText,.pauseText{
+    font-weight: 700;
+
+}
+.play-pause,.quitParent,.replayParent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 
 @keyframes spin {
     0%{
@@ -164,11 +188,15 @@ height: 50%;
     video{
         max-width: 100%;
         min-width: auto;
-     height: auto;
      background-color: #ff7c44;
          border-radius: 10px;
      }
-   
+     .quitSymbol,.replaySymbol,.pauseSymbol{
+        height: 20px;
+        width: 20px;
+        font-size: 10px;
+
+     }
 
     .title-span{
         font-weight: bold;
@@ -181,10 +209,15 @@ height: 50%;
     row-gap: 150px;
 
     }  
+    .quitSymbol,.replaySymbol,.pauseSymbol{
+        height: 30px;
+        width: 30px;
+        font-size: 15px;
+
+     }
     video{
         max-width: 80%;
         min-width: auto;
-     height: auto;
      background-color: #ff7c44;
          border-radius: 10px;
      }
@@ -198,9 +231,14 @@ height: 50%;
     video{
         max-width: 80%;
         min-width: auto;
-     height: auto;
      background-color: #ff7c44;
          border-radius: 10px;
+     }
+     .quitSymbol,.replaySymbol,.pauseSymbol{
+        height: 25px;
+        width: 25px;
+        font-size: 13px;
+
      }
     
 }

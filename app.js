@@ -7,15 +7,42 @@ let spinner = document.createElement("div");
 let text = "";
 
 /* buttons */
-let button=document.createElement("div");
-let playPause=document.createElement("div");
-let quit=document.createElement("div");
-let replay=document.createElement("div");
-button.className="button-parent"
-playPause.className="play-pause"
-quit.className="quit"
-replay.className="replay"
-button.append(quit,playPause,replay)
+let button = document.createElement("div");
+
+let playPauseParent = document.createElement("div");
+let playPauseChildSymbol = document.createElement("div")
+playPauseChildSymbol.className = ("pauseSymbol");
+playPauseChildSymbol.textContent="P"
+let playPauseChildText = document.createElement("div")
+playPauseChildText.className = ("pauseText");
+playPauseChildText.textContent="PAUSE"
+playPauseParent.append(playPauseChildSymbol, playPauseChildText)
+
+let quitParent = document.createElement("div");
+let quitChildSymbol = document.createElement("div")
+quitChildSymbol.className = ("quitSymbol");
+quitChildSymbol.textContent="Q"
+let quitChildText = document.createElement("div")
+quitChildText.className = ("quitText");
+quitChildText.textContent="QUIT"
+quitParent.append(quitChildSymbol, quitChildText)
+
+let replayParent = document.createElement("div");
+let replayChildText = document.createElement("div")
+replayChildText.className = ("replayText");
+replayChildText.textContent="REPLAY"
+let replayChildSymbol = document.createElement("div")
+replayChildSymbol.className = ("replaySymbol");
+replayChildSymbol.textContent="R"
+
+replayParent.append(replayChildSymbol, replayChildText)
+
+
+button.className = "button-parent"
+playPauseParent.className = "play-pause"
+quitParent.className = "quitParent"
+replayParent.className = "replayParent"
+button.append(quitParent, playPauseParent, replayParent)
 
 
 //ends here
@@ -41,13 +68,16 @@ function videoSetter(userInput, text) {
   title.textContent = text;
   div.append(title);
   div.append(spinner);
+button.remove()
+
   video.style.display = "none";
 
   video.setAttribute("src", `${userInput}.mp4`);
   video.addEventListener("canplaythrough", () => {
-    div.removeChild(spinner);
+    spinner.remove()
     video.style.display = "block";
     div.append(video);
+    div.append(button)
   });
 }
 function vedioChooser(target) {
@@ -193,3 +223,4 @@ video.addEventListener("ended", () => {
     clearInterval(duration);
   }, 2000);
 });
+
