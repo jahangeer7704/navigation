@@ -16,7 +16,7 @@ playPauseChildSymbol.className = "pauseSymbol";
 playPauseChildSymbol.textContent = "P";
 let playPauseChildText = document.createElement("div");
 playPauseChildText.className = "pauseText";
-playPauseChildText.textContent = "PAUSE";
+playPauseChildText.textContent = "SPACE";
 playPauseParent.append(playPauseChildSymbol, playPauseChildText);
 
 let quitParent = document.createElement("div");
@@ -39,7 +39,7 @@ replayChildSymbol.textContent = "R";
 replayParent.append(replayChildSymbol, replayChildText);
 
 button.className = "button-parent";
-playPauseParent.className = "play-pause";
+playPauseParent.className = "pauseParent";
 quitParent.className = "quitParent";
 replayParent.className = "replayParent";
 button.append(quitParent, playPauseParent, replayParent);
@@ -69,7 +69,7 @@ window.addEventListener("keydown", (e) => {
 });
 window.addEventListener("keyup", (e) => {
   videoChooser(e.key);
-  keyLog.push(e.key.toUpperCase());
+  keyLogPusher(e.key.toUpperCase());
   let inputForVideoController =
     e.key === " " ? " " : e.key === "q" ? "Q" : e.key === "r" ? "R" : null;
   if (inputForVideoController) {
@@ -233,20 +233,72 @@ function buttonInputHandler(input, keyLog) {
   input === "Q"
     ? videoQuit()
     : input === "R"
-    ? videoReplay(keyLog)
-    : playPause();
+      ? videoReplay(keyLog)
+      : playPause();
 }
 function videoQuit() {
   div.style.display = "none";
 }
 function videoReplay(keyLog) {
-  keyLog.pop();
-  let index = keyLog.length - 1;
-  videoChooser(keyLog[index]);
-}
-function playPause() {}
 
-video.addEventListener("ended", () => {
+  let index = keyLog.length - 1;
+  if(index!=-1){
+
+    videoChooser(keyLog[index]);
+  }
+}
+function playPause() {
+ 
+  if (video.paused) {
+    video.play();
+  }
+  else {
+    video.pause();
+  }
+}
+button.addEventListener("click", (e) => {
+  let caughtClass = e.target.className
+
+  caughtClass.includes("replay") ? videoReplay(keyLog) 
+  : caughtClass.includes("quit") ? videoQuit() 
+  : caughtClass.includes("pause") ? playPause() 
+  : null
+
+})
+
+function keyLogPusher(key) {
+let allowedKeys=key==="X"?key
+:key==="Y"?key
+:key==="Z"?key
+:key==="1"?key
+:key==="2"?key
+:key==="3"?key
+:key==="4"?key
+:key==="5"?key
+:key==="6"?key
+:key==="7"?key
+:key==="8"?key
+:key==="9"?key
+:key==="0"?key
+:key==="A"?key
+:key==="B"?key
+:key==="C"?key
+:key==="D"?key
+:key==="E"?key
+:key==="F"?key
+:key==="G"?key
+:key==="H"?key
+:key==="M"?key
+:key==="J"?key
+:key==="K"?key
+:key==="L"?key:null
+if(allowedKeys!=null){
+
+  keyLog.push(allowedKeys)
+}
+
+}
+ video.addEventListener("ended", () => {
   let duration = setInterval(() => {
     div.style.display = "none";
 
