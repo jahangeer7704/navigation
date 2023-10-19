@@ -7,6 +7,7 @@ color: var(--col);
 text-align: center;
 list-style-type: none;
 font-family: 'Poppins', sans-serif;
+user-select: none;
 
 }
 :root{
@@ -146,19 +147,22 @@ column-gap: 20px;
 }
 .quitSymbol,.replaySymbol,.pauseSymbol{
     height: 40px;
-    background-color: #ffffff;
-    width: 40px;
+    color: white;
+
     border-radius: 50%;
     display: grid;
     place-content: center;
 margin-bottom: 10px;
-font-weight: 400;
-font-size: 25px;
-color: black;
+transition: all .5s linear;
 
 }
 .quitText,.replayText,.pauseText{
     font-weight: 700;
+    background-color: rgba(128, 128, 128, 0.396);
+    height: 25px;
+    width: 55px;
+    border-radius: 5px;
+
 
 }
 .pauseParent,.quitParent,.replayParent{
@@ -194,13 +198,18 @@ color: black;
      .quitSymbol,.replaySymbol,.pauseSymbol{
         height: 20px;
         width: 20px;
-        font-size: 10px;
 
      }
 
     .title-span{
         font-weight: bold;
         font-size: 30px;
+    }
+    .button-parent{
+margin-inline: 30px;
+
+justify-content: space-around;
+
     }
 }
 @media screen and ( (min-width:640px) and (max-width:740px)) {
@@ -212,7 +221,6 @@ color: black;
     .quitSymbol,.replaySymbol,.pauseSymbol{
         height: 30px;
         width: 30px;
-        font-size: 15px;
 
      }
     video{
@@ -237,7 +245,6 @@ color: black;
      .quitSymbol,.replaySymbol,.pauseSymbol{
         height: 25px;
         width: 25px;
-        font-size: 13px;
 
      }
     

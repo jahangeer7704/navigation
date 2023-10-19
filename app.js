@@ -9,11 +9,11 @@ let keyLog = [];
 
 /* buttons */
 let button = document.createElement("div");
+let googleIconMaterialClass="material-symbols-outlined"
 
 let playPauseParent = document.createElement("div");
 let playPauseChildSymbol = document.createElement("div");
-playPauseChildSymbol.className = "pauseSymbol";
-playPauseChildSymbol.textContent = "P";
+playPauseChildSymbol.className=`pauseSymbol ${googleIconMaterialClass}`
 let playPauseChildText = document.createElement("div");
 playPauseChildText.className = "pauseText";
 playPauseChildText.textContent = "SPACE";
@@ -21,20 +21,20 @@ playPauseParent.append(playPauseChildSymbol, playPauseChildText);
 
 let quitParent = document.createElement("div");
 let quitChildSymbol = document.createElement("div");
-quitChildSymbol.className = "quitSymbol";
-quitChildSymbol.textContent = "Q";
+quitChildSymbol.className = `quitSymbol ${googleIconMaterialClass}`
+quitChildSymbol.textContent="undo"
 let quitChildText = document.createElement("div");
 quitChildText.className = "quitText";
-quitChildText.textContent = "QUIT";
+quitChildText.textContent = "Q";
 quitParent.append(quitChildSymbol, quitChildText);
 
 let replayParent = document.createElement("div");
 let replayChildText = document.createElement("div");
 replayChildText.className = "replayText";
-replayChildText.textContent = "REPLAY";
+replayChildText.textContent = "R";
 let replayChildSymbol = document.createElement("div");
-replayChildSymbol.className = "replaySymbol";
-replayChildSymbol.textContent = "R";
+replayChildSymbol.className = `replaySymbol ${googleIconMaterialClass}`
+replayChildSymbol.textContent="replay"
 
 replayParent.append(replayChildSymbol, replayChildText);
 
@@ -87,8 +87,10 @@ function videoSetter(userInput, text) {
 
   video.setAttribute("src", `${userInput}.mp4`);
   video.addEventListener("canplaythrough", () => {
-    spinner.remove();
     video.style.display = "block";
+    spinner.remove();
+     android()
+     playPauseChildSymbol.textContent="pause"
     div.append(video);
     div.append(button);
   });
@@ -251,9 +253,15 @@ function playPause() {
  
   if (video.paused) {
     video.play();
+    playPauseChildSymbol.className=`pauseSymbol ${googleIconMaterialClass}`
+    playPauseChildSymbol.textContent="pause"
+
   }
   else {
     video.pause();
+    playPauseChildSymbol.className=`pauseSymbol ${googleIconMaterialClass}`
+    playPauseChildSymbol.textContent="play_arrow"
+
   }
 }
 button.addEventListener("click", (e) => {
@@ -305,3 +313,18 @@ if(allowedKeys!=null){
     clearInterval(duration);
   }, 2000);
 });
+
+function android(){
+  let userAgent=navigator.userAgent
+  let system=userAgent.indexOf("Android")!==-1
+  if (system) {
+playPauseChildText.remove()
+quitChildText.remove()
+replayChildText.remove()
+
+
+  
+    
+  }
+  
+}
