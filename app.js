@@ -6,7 +6,7 @@ let title = document.createElement("span");
 let spinner = document.createElement("div");
 let text = "";
 let keyLog = [];
-
+let goBack=document.getElementsByClassName("goBack")[0];
 /* buttons */
 let button = document.createElement("div");
 let googleIconMaterialClass="material-symbols-outlined"
@@ -75,6 +75,10 @@ window.addEventListener("keyup", (e) => {
   if (inputForVideoController) {
     buttonInputHandler(inputForVideoController, keyLog);
   }
+  if(e.key==="Escape")
+  {
+goBackBlock()
+  }
 });
 function videoSetter(userInput, text) {
   div.style.display = "flex";
@@ -82,7 +86,6 @@ function videoSetter(userInput, text) {
   div.append(title);
   div.append(spinner);
   button.remove();
-
   video.style.display = "none";
 
   video.setAttribute("src", `${userInput}.mp4`);
@@ -93,6 +96,9 @@ function videoSetter(userInput, text) {
      playPauseChildSymbol.textContent="pause"
     div.append(video);
     div.append(button);
+window.scrollBy(0,100)
+
+
   });
 }
 function videoChooser(target) {
@@ -240,6 +246,8 @@ function buttonInputHandler(input, keyLog) {
 }
 function videoQuit() {
   div.style.display = "none";
+window.scrollBy(0,-100)
+
 }
 function videoReplay(keyLog) {
 
@@ -313,7 +321,10 @@ if(allowedKeys!=null){
     clearInterval(duration);
   }, 2000);
 });
+goBack.addEventListener("click", () => {
+goBackBlock()
 
+})
 function android(){
   let userAgent=navigator.userAgent
   let system=userAgent.indexOf("Android")!==-1
@@ -321,10 +332,13 @@ function android(){
 playPauseChildText.remove()
 quitChildText.remove()
 replayChildText.remove()
-
+goBack.remove()
 
   
     
   }
   
+}
+function goBackBlock(){
+  location.reload()
 }
