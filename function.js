@@ -157,7 +157,7 @@ function videoSetter(userInput, text) {
     behavior: "smooth"
   });
 
-  video.setAttribute("src", `${userInput}.mp4`);
+  video.setAttribute("src", `./Videos/${userInput}.mp4`);
   video.addEventListener("canplaythrough", () => {
     video.style.display = "block";
     spinner.remove();

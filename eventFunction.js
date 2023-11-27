@@ -24,7 +24,7 @@ let keyUpEvent = (e) => {
   videoChooser(e.key);
   keyLogPusher(e.key.toUpperCase());
   let inputForVideoController =
-    e.key === " " ? " " : e.key === "q" ? "Q" : e.key === "r" ? "R" : null;
+    e.key === " " ? " " : e.key === "q" |e.key==="Q" ? "Q" : e.key === "r" |e.key==="R"  ? "R" : null;
   if (inputForVideoController) {
     buttonInputHandler(inputForVideoController, keyLog);
   }
