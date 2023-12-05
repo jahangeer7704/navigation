@@ -56,7 +56,7 @@ let videoEndEvent = () => {
   }, 2000);
 };
 function goBackBlock() {
-  location.reload();
+ window.location.assign("https://easebot.netlify.app")//easesbot.ne
 }
 
 let scrollPrevent=(e)=>{
