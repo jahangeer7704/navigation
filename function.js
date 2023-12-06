@@ -19,31 +19,31 @@ const decs = {
   "1":"CS Lab 1 ,iss on first floor",
   "2":"CS Lab 2,iss on the first floor",
   "3":"CS Lab 3,iss  on the ground floor",
-  "4":"CS Lab 4",
-  "5":"Physics Lab ,",
-  "6":"Chemistry Lab",
-  "7":"Electrical Lab",
-  "8":"Digital Lab",
-  "9":"CSE 2nd Year A-Section",
-  "0":"CSE 2nd Year B-Section",
-  "A":"CSE 3rd Year A-Section",
-  "B":"CSE 3rd Year B-Section",
-  "C":"CSE 4th Year",
-  "D":"AI&DS 2nd Year B-section",
-  "E":"Gents Rest Room 1",
-  "F":"Gents Rest Room 2",
-  "G":"Ladies Rest Room 1",
-  "H":"Ladies Rest Room 2",
-  "M":"Seminar Hall",
-  "J":"Smart Room",
-  "K":"Server Room",
-  "L":"AI&DS Staff Room",
+  "4":"CS Lab 4 , iss  on the second floor",
+  "5":"Physics Lab , iss  on the ground floor",
+  "6":"Chemistry Lab , iss on the ground floor",
+  "7":"Electrical Lab , iss on the first floor",
+  "8":"Digital Lab , iss on the first floor",
+  "9":"CSE 2nd Year A-Section , iss on the third floor",
+  "0":"CSE 2nd Year B-Section , iss on the third floor",
+  "A":"CSE 3rd Year A-Section , iss on the second floor",
+  "B":"CSE 3rd Year B-Section , iss on the second floor",
+  "C":"CSE 4th Year , iss on the second floor",
+  "D":"AI&DS 2nd Year B-section , iss on the third floor",
+  "E":"Gents Rest Room 1 , iss on the ground floor",
+  "F":"Gents Rest Room 2 , iss on the second floor",
+  "G":"Ladies Rest Room 1 , iss on the second floor",
+  "H":"Ladies Rest Room 2 , iss on the third floor",
+  "M":"Seminar Hall , iss on the second floor",
+  "J":"Smart Room  , iss on the first floor",
+  "K":"Server Room  , iss on the first floor",
+  "L":"AI&DS Staff Room , iss on the third floor",
 }
 
 const speak = (text) =>{
   speechSynthesis.cancel()
   let utterance = new SpeechSynthesisUtterance("Navigating to " + text);
-  utterance.rate = .8
+  utterance.rate = .68
   utterance.pitch = 0
   speechSynthesis.speak(utterance);
 
