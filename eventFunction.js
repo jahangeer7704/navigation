@@ -51,6 +51,7 @@ let videoEndEvent = () => {
         top: 0,
         behavior: "smooth"
       });
+      console.log("yes");
 
     clearInterval(duration);
   }, 2000);

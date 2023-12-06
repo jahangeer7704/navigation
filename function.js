@@ -1,3 +1,6 @@
+
+
+//@ts-check
 import { keyLog, video, div, title, spinner, goBack } from "./elements.js";
 import {
   button,
@@ -9,134 +12,197 @@ import {
 } from "./mediaButon.js";
 let text = "";
 
+const decs = {
+  "X":"Principal Room ",
+  "Y":"CSE HOD Room ",
+  "Z":"CSE Staff Room",
+  "1":"CS Lab 1 ,iss on first floor",
+  "2":"CS Lab 2,iss on the first floor",
+  "3":"CS Lab 3,iss  on the ground floor",
+  "4":"CS Lab 4",
+  "5":"Physics Lab ,",
+  "6":"Chemistry Lab",
+  "7":"Electrical Lab",
+  "8":"Digital Lab",
+  "9":"CSE 2nd Year A-Section",
+  "0":"CSE 2nd Year B-Section",
+  "A":"CSE 3rd Year A-Section",
+  "B":"CSE 3rd Year B-Section",
+  "C":"CSE 4th Year",
+  "D":"AI&DS 2nd Year B-section",
+  "E":"Gents Rest Room 1",
+  "F":"Gents Rest Room 2",
+  "G":"Ladies Rest Room 1",
+  "H":"Ladies Rest Room 2",
+  "M":"Seminar Hall",
+  "J":"Smart Room",
+  "K":"Server Room",
+  "L":"AI&DS Staff Room",
+}
+
+const speak = (text) =>{
+  speechSynthesis.cancel()
+  let utterance = new SpeechSynthesisUtterance("Navigating to " + text);
+  utterance.rate = .8
+  utterance.pitch = 0
+  speechSynthesis.speak(utterance);
+
+
+}
+
 function videoChooser(target) {
   let userInput = target.toUpperCase();
   switch (userInput) {
     case "X":
       text = "Principal Room";
+      speak(decs['X'])
       videoSetter(userInput, text);
       break;
 
     case "Y":
       text = "CSE HOD Room";
+      speak(decs['Y'])
       videoSetter(userInput, text);
       break;
 
     case "Z":
       text = "CSE Staff Room";
+      speak(decs['Z'])
       videoSetter(userInput, text);
       break;
 
     case "1":
       text = "CS Lab 1";
+      speak(decs['1'])
       videoSetter(userInput, text);
       break;
 
     case "2":
       text = "CS Lab 2";
+      speak(decs['2'])
       videoSetter(userInput, text);
       break;
 
     case "3":
       text = "CS Lab 3";
+      speak(decs['3'])
       videoSetter(userInput, text);
       break;
 
     case "4":
       text = "CS Lab 4";
+      speak(decs['4'])
       videoSetter(userInput, text);
       break;
 
     case "5":
       text = "Physics Lab";
+      speak(decs['5'])
       videoSetter(userInput, text);
       break;
 
     case "6":
       text = "Chemistry Lab";
+      speak(decs['6'])
       videoSetter(userInput, text);
       break;
 
     case "7":
       text = "Electrical Lab";
+      speak(decs['7'])
       videoSetter(userInput, text);
       break;
 
     case "8":
       text = "Digital Lab";
+      speak(decs['8'])
       videoSetter(userInput, text);
       break;
 
     case "9":
       text = "CSE 2nd Year A-Sec";
 
+      speak(decs['9'])
       videoSetter(userInput, text);
       break;
 
     case "0":
       text = "CSE 2nd Year B-Sec";
 
+      speak(decs['0'])
       videoSetter(userInput, text);
       break;
 
     case "A":
       text = "CSE 3rd Year A-Sec";
 
+      speak(decs['A'])
       videoSetter(userInput, text);
       break;
 
     case "B":
       text = "CSE 3rd Year B-Sec";
 
+      speak(decs['B'])
       videoSetter(userInput, text);
       break;
 
     case "C":
       text = "CSE 4th Year";
+      speak(decs['C'])
       videoSetter(userInput, text);
       break;
 
     case "D":
       text = "AI&DS 2nd Year B-sec";
+      speak(decs['D'])
       videoSetter(userInput, text);
       break;
 
     case "E":
       text = "Gents Rest Room 1";
+      speak(decs['E'])
       videoSetter(userInput, text);
       break;
 
     case "F":
       text = "Gents Rest Room 2";
+      speak(decs['F'])
       videoSetter(userInput, text);
       break;
 
     case "G":
       text = "Ladies Rest Room 1";
+      speak(decs['G'])
       videoSetter(userInput, text);
       break;
     case "H":
       text = "Ladies Rest Room 2";
+      speak(decs['H'])
       videoSetter(userInput, text);
       break;
 
     case "M":
       text = "Seminar Hall";
+      speak(decs['M'])
       videoSetter(userInput, text);
       break;
 
     case "J":
       text = "Smart Room";
+      speak(decs['J'])
       videoSetter(userInput, text);
       break;
 
     case "K":
       text = "Server Room";
+      speak(decs['K'])
       videoSetter(userInput, text);
       break;
 
     case "L":
       text = "AI&DS Staff Room";
+      speak(decs['L'])
       videoSetter(userInput, text);
       break;
 
@@ -144,6 +210,7 @@ function videoChooser(target) {
       null;
   }
 }
+
 
 function videoSetter(userInput, text) {
   div.style.display = "flex";
